@@ -19,7 +19,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	
 	private Timer timer;
 	
-	private long score = 0;
+	private long score = 999;
 	private double difficulty = 0.1;
 	
 	public GameEngine(GamePanel gp, SpaceShip v) {
@@ -62,7 +62,7 @@ public class GameEngine implements KeyListener, GameReporter{
 			if(!e.isAlive()){
 				e_iter.remove();
 				gp.sprites.remove(e);
-				score += 100;
+				score += 1000;
 			}
 		}
 		
