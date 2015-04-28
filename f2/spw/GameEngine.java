@@ -19,6 +19,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	
 	private Timer timer;
 	
+	private long level=1;
 	private long score = 999;
 	private double difficulty = 0.1;
 	
@@ -63,6 +64,10 @@ public class GameEngine implements KeyListener, GameReporter{
 				e_iter.remove();
 				gp.sprites.remove(e);
 				score += 1000;
+			    if(score==99999999){
+					level++;
+					score=0;
+				}	
 			}
 		}
 		
