@@ -19,7 +19,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	
 	private Timer timer;
 	
-	private long level=1;
+	private long level =1;
 	private long score = 999;
 	private double difficulty = 0.1;
 	
@@ -64,9 +64,9 @@ public class GameEngine implements KeyListener, GameReporter{
 				e_iter.remove();
 				gp.sprites.remove(e);
 				score += 1000;
-			    if(score==99999999){
+			    if(score>9999999){
 					level++;
-					score=0;
+					score=999;
 				}	
 			}
 		}
@@ -105,7 +105,9 @@ public class GameEngine implements KeyListener, GameReporter{
 	public long getScore(){
 		return score;
 	}
-	
+	public long getLevel(){
+		return level;
+	}
 	@Override
 	public void keyPressed(KeyEvent e) {
 		controlVehicle(e);
