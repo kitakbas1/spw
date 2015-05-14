@@ -65,7 +65,7 @@ public class GameEngine implements KeyListener, GameReporter{
 				gp.sprites.remove(e);
 				score += 1000;
 			    if(score>9999999){
-					level++;
+					level++; 
 					score=999;
 				}	
 			}
@@ -91,10 +91,10 @@ public class GameEngine implements KeyListener, GameReporter{
 	void controlVehicle(KeyEvent e) {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_LEFT:
-			v.move(-1);
+			v.move(-5);
 			break;
 		case KeyEvent.VK_RIGHT:
-			v.move(1);
+			v.move(5);
 			break;
 		case KeyEvent.VK_D:
 			difficulty += 0.1;

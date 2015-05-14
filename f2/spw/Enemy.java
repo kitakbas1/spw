@@ -3,16 +3,25 @@ package f2.spw;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.io.IOException;    //try catch
+import java.awt.Image;        //picture
+import javax.imageio.ImageIO;  
+import java.io.File;
 
 public class Enemy extends Sprite{
 	public static final int Y_TO_FADE = 400;
 	public static final int Y_TO_DIE = 600;
-	
+	private Image env;	
 	private int step = 12;
 	private boolean alive = true;
 	
 	public Enemy(int x, int y) {
-		super(x, y, 5, 10);
+		super(x, y, 30, 30);
+		try{
+               env = ImageIO.read(new File("C:\\Users\\Sithinon\\Documents\\spw\\f2\\img\\piv4.png"));
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -24,8 +33,9 @@ public class Enemy extends Sprite{
 			g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 
 					(float)(Y_TO_DIE - y)/(Y_TO_DIE - Y_TO_FADE)));
 		}
-		g.setColor(Color.PINK);
+		
 		g.fillRect(x, y, width, height);
+		g.drawImage(env,x ,y ,width,height,null);
 		
 	}
 
