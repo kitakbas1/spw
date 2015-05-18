@@ -67,6 +67,7 @@ public class GameEngine implements KeyListener, GameReporter{
 			    if(score>9999999){
 					level++; 
 					score=999;
+
 				}	
 			}
 		}
